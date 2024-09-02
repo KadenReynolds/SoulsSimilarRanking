@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+src/Server/database/seed.js
 
 # Editor directories and files
 .vscode/*
