@@ -1,13 +1,14 @@
 require('dotenv').config()
 const db = require('./client');
 const { createUser } = require('./users');
+const { passList } = require('./adminPass')
 
 
 const users = [{
   user_id: 1,
   permissions: 'admin',
   username: 'kayreynolds',
-  password: 'blah'
+  password: passList(1)
 }]
 
 
