@@ -21,6 +21,31 @@ const createGame = async ({name, description, build_played, game_image}) => {
   }
 }
 
+const getAllGames = async() => {
+  try {
+    const {rows} = await db.query(`
+      SELECT * FROM games;
+    `)
+    return rows
+  } catch (err) {
+    throw err
+  }
+}
+
+const getGameByID = async(gameID) => {
+  try {
+    const {rows:game} = await db.query(`
+      SELECT * FROM games
+      WHERE game_id=$1;
+    `, [gameID])
+    return game
+  } catch (err) {
+    throw err
+  }
+}
+
 module.exports = {
-  createGame
+  createGame,
+  getAllGames,
+  getGameByID
 }

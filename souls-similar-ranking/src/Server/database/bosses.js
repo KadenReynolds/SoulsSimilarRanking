@@ -40,6 +40,31 @@ const createBoss = async ({name, description, boss_image, game_id, game_rank, ov
   }
 }
 
+const getAllBosses = async() => {
+  try {
+    const {rows} = await db.query(`
+      SELECT * FROM bosses
+    `)
+    return rows
+  } catch (err) {
+    throw err
+  }
+}
+
+const getBossesByGameId = async(gameID) => {
+  try {
+    const {rows : boss} = await db.query(`
+      SELECT * FROM bosses
+      WHERE game_id=$1
+    `,[gameID]) 
+    return boss
+  } catch (err) {
+    throw err
+  }
+}
+
 module.exports = {
-  createBoss
+  createBoss,
+  getAllBosses,
+  getBossesByGameId
 }
