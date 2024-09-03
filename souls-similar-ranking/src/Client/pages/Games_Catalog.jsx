@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 
-export default function Games_Catalog() {
+export default function Games_Catalog({token}) {
   const [ games, setGames ] = useState([{}]);
 
 
@@ -29,14 +29,18 @@ export default function Games_Catalog() {
   return (
     <>
       <h1>Games</h1>
-      {games.map((game) => {
-        return(
-          <div className="gameDiv" key={game.game_id}>
-            <h3>{game.name}</h3>
-            <img src={game.game_image} alt="Image Not Available"/>
-          </div>
-        )
-      })}
+      <div className="gameMasterDiv">
+        {games.map((game) => {
+          return(
+            <div className="gameDiv" key={game.game_id}>
+              <img src={game.game_image} alt="Image Not Available"/>
+              <div>
+                <h3 className="gameName">{game.name}</h3>
+              </div>
+            </div>
+          )
+        })}
+      </div>
     </>
   )
 }
