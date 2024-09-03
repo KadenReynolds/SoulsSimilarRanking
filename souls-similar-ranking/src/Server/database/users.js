@@ -44,7 +44,9 @@ const getUser = async({username, password}) => {
     if (!user) return;
     const hashedPassword = user.password;
     const passwordsMatch = await bcrypt.compare(password, hashedPassword)
-    if (!passwordsMatch) return;
+    if (!passwordsMatch){
+      return;
+    } 
     delete user.password
     return user
   } catch (err) {
@@ -52,17 +54,20 @@ const getUser = async({username, password}) => {
   }
 }
 
-const getUserByUsername = async({username}) => {
-  const lowerUsername = username.toLowerCase();
+const getUserByUsername = async (username) => {
+  const lowerUsername = username.toLowerCase()
   try {
-    const {rows: [user]} = await db.query(`
-      SELECT *
+      const { rows: [user] } = await db.query(`
+      SELECT * 
       FROM users
-      WHERE username=$1
-    `, [lowerUsername])
-    return user
+      WHERE username=$1;`, [lowerUsername]);
+
+      if (!user) {
+          return;
+      }
+      return user;
   } catch (err) {
-    throw err
+      throw err;
   }
 }
 
