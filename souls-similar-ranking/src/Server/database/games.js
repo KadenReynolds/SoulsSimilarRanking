@@ -44,8 +44,22 @@ const getGameByID = async(gameID) => {
   }
 }
 
+const deleteGameByID = async(gameID) => {
+  try {
+    const {rows:game} = await db.query(`
+      DELETE FROM games
+      WHERE game_id = $1
+      RETURNING *;
+    `, [gameID])
+    return game
+  } catch (err) {
+    throw err
+  }
+}
+
 module.exports = {
   createGame,
   getAllGames,
-  getGameByID
+  getGameByID,
+  deleteGameByID
 }

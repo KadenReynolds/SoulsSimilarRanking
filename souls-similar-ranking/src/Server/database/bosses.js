@@ -51,7 +51,7 @@ const getAllBosses = async() => {
   }
 }
 
-const getBossesByGameId = async(gameID) => {
+const getBossesByGameID = async(gameID) => {
   try {
     const {rows : boss} = await db.query(`
       SELECT * FROM bosses
@@ -63,8 +63,22 @@ const getBossesByGameId = async(gameID) => {
   }
 }
 
+const deleteBossByID = async(bossID) => {
+  try {
+    const {rows:boss} = await db.query(`
+      DELETE FROM bosses
+      WHERE boss_id = $1
+      RETURNING *;
+    `, [bossID])
+    return boss
+  } catch (err) {
+    throw err
+  }
+}
+
 module.exports = {
   createBoss,
   getAllBosses,
-  getBossesByGameId
+  getBossesByGameID,
+  deleteBossByID
 }

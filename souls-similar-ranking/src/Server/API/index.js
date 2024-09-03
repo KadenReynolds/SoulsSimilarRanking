@@ -45,11 +45,11 @@ apiRouter.use((req, res, next) => {
 const usersRouter = require('./users');
 apiRouter.use('/users', usersRouter);
 
-// const gamesRouter = require('./products');
-// apiRouter.use('/products', gamesRouter);
+const gamesRouter = require('./games');
+apiRouter.use('/games', gamesRouter);
 
-// const bossesRouter = require('./orders');
-// apiRouter.use('/orders', bossesRouter);
+const bossesRouter = require('./bosses');
+apiRouter.use('/bosses', bossesRouter);
 
 apiRouter.use((err, req, res, next) => {
   res.status(500).send(err)
