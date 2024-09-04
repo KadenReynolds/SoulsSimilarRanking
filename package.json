@@ -5,8 +5,8 @@
   "scripts": {
     "client": "npm start --prefix client",
     "clientinstall": "npm install --prefix client",
-    "dev": "concurrently \"nodemon src/Server/main.js -w src/Server\" \"vite\"",
-    "build": "concurrently \"nodemon src/Server/main.js -w src/Server\" \"vite build\"",
+    "dev": "concurrently \"npx nodemon src/Server/main.js -w src/Server\" \"vite\"",
+    "build": "concurrently \"npx nodemon src/Server/main.js -w src/Server\" \"vite build\"",
     "lint": "eslint .",
     "preview": "vite preview",
     "seed": "node ./src/Server/database/seed.js"

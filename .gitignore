@@ -24,3 +24,4 @@ src/Server/database/adminPass.js
 *.njsproj
 *.sln
 *.sw?
+.vercel
