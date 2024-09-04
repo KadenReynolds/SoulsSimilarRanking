@@ -1,3 +1,8 @@
+@font-face {
+  font-family: myFont;
+  src: url(./assets/OptimusPrinceps.ttf);
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -28,11 +33,15 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  color: black;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-family: myFont;
+  color: rgb(255, 217, 0);
+  font-weight: lighter;
 }
 
 button {

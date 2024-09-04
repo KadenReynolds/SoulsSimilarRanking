@@ -90,7 +90,7 @@
 
 .gameName{
   margin-top: 30%;
-  margin-bottom: 25%;
+  margin-bottom: 10%;
   color: white;
   font-size: 25pt;
   font-family: myFont;
@@ -105,8 +105,23 @@
   height: 100%;
   border-radius: 15px;
   background-color: black;
-  opacity: 85%;
+  opacity: 95%;
   transition: .5s;
+}
+
+.gameEditButton{
+  color: green;
+  background-color: rgb(24, 24, 24);
+  opacity: 100%;
+  margin-right: 5px;
+  z-index: 1;
+}
+
+.gameDeleteButton{
+  color: red;
+  background-color: rgb(24, 24, 24);
+  opacity: 100%;
+  z-index: 1;
 }
 
 /* ---------------------------- */
@@ -159,3 +174,83 @@
 
 
 /* ---------------------------- */
+
+/* GameBosses */
+
+/* .gameRelativeDiv{
+  position: relative;
+  width: 80svw;
+  height: 240svw;
+} */
+
+.bossGameMasterDiv{
+  position: relative;
+  left: 0;
+  margin-left: -15svw;
+  width: 80svw;
+  height: 240svw;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+.bossDiv{
+  overflow-x: hidden;
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+.bossDiv > h3{
+  position: absolute;
+  top: 3svh;
+  left: 1svw;
+  color: white;
+  font-size: 25pt;
+}
+
+.bossDiv > img{
+  margin-right: 100%;
+  margin-top: 12svh;
+  width: 60svw;
+  aspect-ratio: 1.7;
+}
+
+.bossDiv > h5{
+  width: 12svw;
+  font-size: 15pt;
+  margin-right: 100%;
+  color: white;
+}
+
+.bossDiv > h4{
+  width: 12svw;
+  font-size: 20pt;
+  font-weight: lighter;
+  margin-right: 100%;
+  color: white;
+}
+
+.bossDiv > p{
+  color: white;
+  position: absolute;
+  right: 20svw;
+  bottom: 25svw;
+  left: 15svw;
+  top: 43svw;
+}
+
+/* ---------------------------- */
+
+/* Boss Form */
+
+.bossFormDiv{
+  position: relative;
+  width: 50svw;
+  aspect-ratio: .75;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.bossFormDiv{
+  margin-bottom: 5svh;
+}

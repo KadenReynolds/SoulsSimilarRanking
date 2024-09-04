@@ -15,17 +15,17 @@ const users = [{
 
 const games = [{
   game_id: 1,
-  name: "Souls Similar",
+  name: "BloodBorne",
   description: "very fun game",
   build_played: "strength",
-  game_image: "https.blankimg.io"
+  game_image: "https://images2.alphacoders.com/916/thumbbig-916448.webp"
 }]
 
 const bosses = [{
   boss_id: 1,
-  name: "bleh",
-  description: "this boss is cool",
-  boss_image: "https.blank.io",
+  name: "Father Gascoigne",
+  description: "This boss is sweet",
+  boss_image: "https://wallpaperaccess.com/full/6343935.jpg",
   game_id: 1,
   game_rank: 0,
   overall_rank: 0,

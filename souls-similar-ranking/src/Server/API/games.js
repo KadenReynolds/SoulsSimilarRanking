@@ -54,4 +54,15 @@ gamesRouter.delete('/:gameID',requireAdmin, async (req, res, next) => {
 
 })
 
+gamesRouter.get('/:gameID', async (req, res, next) => {
+  try {
+    const game = await getGameByID(req.params.gameID)
+    res.send({
+      game
+    })
+  } catch ({name, message}) {
+    next({name, message})
+  }
+})
+
 module.exports = gamesRouter

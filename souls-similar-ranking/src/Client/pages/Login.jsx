@@ -60,14 +60,14 @@ export default function Login ({setToken}) {
           Username:
         </label>
         <br />
-        <input type="text" placeholder="Enter Username" className="formInputs" onChange={handleUsername}/>
+        <input type="text" placeholder="Enter Username" className="formInputs" onChange={handleUsername} required/>
         <br />
         <br />
         <label htmlFor="password">
           Password:
         </label>
         <br />
-        <input type="password" placeholder="Enter Password" className="formInputs" onChange={handlePassword}/>
+        <input type="password" placeholder="Enter Password" className="formInputs" onChange={handlePassword} required/>
         <br />
         <br />
         <button type="submit">Login</button>
